@@ -47,3 +47,31 @@ requests.get('https://cloud.tenable.com/scanners', headers=headers)
 ### Print status
 
 `print-scan-status.py` prints the status of existing scans. Scan with a status of 'complete' can be downloaded.
+
+### Scan details
+
+`scan-details.py` prints the details including the number of vulnerabilities from recent scans.
+
+```
+$ scan-details.py 15
+. . .
+ u'hosts': [{u'critical': 0,
+             . . .
+             u'hostname': u'ec2-35-164-212-193.us-west-2.compute.amazonaws.com',
+             u'info': 14,
+             u'low': 2,
+             u'medium': 1,
+             . . . 
+             u'severitycount': {u'item': [{u'count': 14,
+                                           u'severitylevel': 0},
+                                          {u'count': 2,
+                                           u'severitylevel': 1},
+                                          {u'count': 1,
+                                           u'severitylevel': 2},
+                                          {u'count': 0,
+                                           u'severitylevel': 3},
+                                          {u'count': 0,
+                                           u'severitylevel': 4}]},
+```
+
+15 is the scan id available from `print-scan-status.py`. This provide a means to report on new vulnerabilities.
