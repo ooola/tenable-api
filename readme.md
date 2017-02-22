@@ -19,6 +19,9 @@ Set your user credentials in creds.json
 
 First login to get a session cookie then include it as `X-Cookie` for subsequent requests.
 
+Note that Tenable now supports API keys so the X-Cookie is not required.
+See <https://cloud.tenable.com/api#/authorization> for more information.
+
 ```
 #!/usr/bin/env python2.7
 
